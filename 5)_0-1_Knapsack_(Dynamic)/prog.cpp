@@ -19,27 +19,29 @@ int main()
    clock_t begin, halt;
    system ("clear");
 
-   printf("\n| Suchinton (A2345920063) |");
-   printf("\n|-----------------------------|");
-   printf("\n| WAP to implement Quick Sort |");
-   printf("\n|-----------------------------|\n");
+   printf("\n| Suchinton (A2345920063)                      |");
+   printf("\n|----------------------------------------------|");
+   printf("\n| WAP to implement knapsack prob (Dynamic-0/1) |");
+   printf("\n|----------------------------------------------|\n");
    
-   cout << "Enter the number of items in a Knapsack:";
+   cout << "Enter the number of items in a Knapsack: ";
    int n, W;
    cin >> n;
    int v[n], w[n];
    for (int i = 0; i < n; i++) 
    {
-      cout << "Enter value and weight for item " << i << ":\n";
+      cout << "Enter value and weight for item " << i+1 << ":\n";
       cout << "value: ";
       cin >> v[i];
       cout << "weight: ";
       cin >> w[i];
    }
-   cout << "Enter the capacity of knapsack";
+   cout << "Enter the capacity of knapsack: ";
    cin >> W;
-
-   cout << knapSack(W, w, v, n);
+   
+   cout<<"\n\n==============================================\n\n";
+   
+   cout << "Max profit: " << knapSack(W, w, v, n);
    halt = clock();
    printf("\nTime taken is %f CPU cycles \n\n",(float)(halt-begin)/CLOCKS_PER_SEC);
    return 0;

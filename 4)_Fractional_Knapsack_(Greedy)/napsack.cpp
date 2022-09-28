@@ -33,28 +33,31 @@ int main()
 
     system ("clear");
 
-    printf("\n| Suchinton (A2345920063)        |");
-    printf("\n|--------------------------------|");
-    printf("\n| WAP to implement knapsack prob |");
-    printf("\n|--------------------------------|\n");
+    printf("\n| Suchinton (A2345920063)                            |");
+    printf("\n|----------------------------------------------------|");
+    printf("\n| WAP to implement knapsack prob (Gereedy-Fractional)|");
+    printf("\n|----------------------------------------------------|\n");
 
-   cout << "Enter the number of items in a Knapsack:";
+   cout << "Enter the number of items in a Knapsack: ";
    int n, W;
    cin >> n;
    int v[n], w[n];
    for (int i = 0; i < n; i++) 
    {
-      cout << "Enter value and weight for item " << i << ":\n";
+      cout << "Enter value and weight for item " << i+1 << ":\n";
       cout << "value: ";
       cin >> v[i];
       cout << "weight: ";
       cin >> w[i];
    }
-   cout << "Enter the capacity of knapsack";
+   cout << "Enter the capacity of knapsack: ";
    cin >> W;
    begin = clock();
-   cout << knapSack(W, w, v, n);
+     
+   cout<<"\n\n==============================================\n\n";
+   
+   cout << "Max profit: " << knapSack(W, w, v, n);
    halt = clock();
-   printf("\nTime taken is %f CPU cycles \n\n",(float)(halt-begin)/CLOCKS_PER_SEC);
+   printf("\n\nTime taken is %f CPU cycles \n\n",(float)(halt-begin)/CLOCKS_PER_SEC);
    return 0;
 }
