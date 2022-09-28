@@ -33,10 +33,10 @@ int main()
 
     system ("clear");
 
-    printf("\n| Suchinton (A2345920063) |");
-    printf("\n|-----------------------------|");
-    printf("\n| WAP to implement Quick Sort |");
-    printf("\n|-----------------------------|\n");
+    printf("\n| Suchinton (A2345920063)        |");
+    printf("\n|--------------------------------|");
+    printf("\n| WAP to implement knapsack prob |");
+    printf("\n|--------------------------------|\n");
 
    cout << "Enter the number of items in a Knapsack:";
    int n, W;
