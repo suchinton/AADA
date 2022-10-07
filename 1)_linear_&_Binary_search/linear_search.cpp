@@ -1,9 +1,7 @@
 #include<iostream>
 #include <unistd.h>
 #include <time.h>
-
 using namespace std;
-
 int liner_search(int arr[], int len, int search);
 
 int main()
