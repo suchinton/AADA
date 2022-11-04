@@ -1,21 +1,10 @@
-
-/* 
-
-Given two sequences, a subsequence is a sequence that appears in the same relative order, but not necessarily contiguous.
-For example, “abc”, “abg”, “bdf”, “aeg”, „”acefg”, .. etc are subsequences of “abcdefg”.
-So a string of length n has 2^n different possible subsequences. 
-It is a classic computer science problem, the basis of file comparison programs and has applications in bioinformatics.
-Develop a pro gram to implement the solution of Longest Common Sub-sequence problem.
-
- */
-
 #include<bits/stdc++.h>
 #include <iostream>
 
 using namespace std;
   
 int max(int a, int b);
-  
+
 void reverseStr(string& str)
 {
     int n = str.length();
@@ -23,7 +12,7 @@ void reverseStr(string& str)
     for (int i = 0; i < n / 2; i++)
         swap(str[i], str[n - i - 1]);
 }
-
+  
 /* Returns length of LCS */
 int LCS(string Str1, string Str2, int m, int n)
 {
@@ -65,18 +54,15 @@ int LCS(string Str1, string Str2, int m, int n)
             cout<<L[i][j]<<" | ";
     }
 
-    cout<<"\n";
-
     /* Tracing LCS */
     string seq;
-    cout<<"\n/\\ ";
     for(i = m; i > 0; i--)
     {
         for(j = n; j > 0; j--)
         {
             if (Str1[i-1]==Str2[j-1]) {
                 seq = seq + Str1[i-1];
-                cout<<"\n|| ["<<i<<"]["<<j<<"]";
+                cout<<"\nadded ["<<i<<"]["<<j<<"]";
                 i--;
             }
             else if(L[i-1][j] > L[i][j-1])
@@ -90,10 +76,9 @@ int LCS(string Str1, string Str2, int m, int n)
             }
         }
     }
-
     reverseStr(seq);
      
-    cout<<"\n\nLongest Common Sub-Sequence: "<<seq<<"\n";
+    cout<<"\nseq: "<<seq<<"\n";
 
     return L[m][n];
 }
@@ -124,7 +109,7 @@ int main()
     int m = Str1.length();
     int n = Str2.length();
 
-    printf("\nLength of LCS is %d\n", LCS(Str1, Str2, m, n));
+    printf("\n\nLength of LCS is %d\n", LCS(Str1, Str2, m, n));
 
     return 0;
 }
