@@ -56,6 +56,33 @@ int LCS(string Str1, string Str2, int m, int n)
         for (j = 0; j <= n; j++)
             cout<<L[i][j]<<" | ";
     }
+
+    /* Tracing LCS */
+    string seq;
+    for(i = m; i >= 0; i--)
+    {
+        for(j = n; j >= 0; j--)
+        {
+            if (i == 0 || j ==0 )
+                continue;
+            else if(L[i][j] > L[i][j-1] && L[i][j] > L[i-1][j] )
+            {
+                seq = seq + Str1[i+1];
+                cout<<"\nadded ["<<i<<"]["<<j<<"]";
+                i--;
+                j--;
+            }
+            else
+            {
+                if(L[i][j-1] >= L[i-1][j])
+                    j--;
+                else
+                    i--;
+            }
+        }
+    }
+    cout<<"\nseq: "<<seq<<"\n";
+
     return L[m][n];
 }
   
@@ -66,7 +93,7 @@ int max(int a, int b)
   
 int main()
 {
-    //system ("clear");
+    system ("clear");
 
     printf("\n| Cherry    (A2345920063)                   |");
     printf("\n| Suchinton (A2345920063)                   |");
@@ -86,7 +113,6 @@ int main()
     int n = Str2.length();
 
     printf("\n\nLength of LCS is %d\n", LCS(Str1, Str2, m, n));
-    //cout<<"\nLength of LCS is " <<LCS(Str1, Str2, m, n);
 
     return 0;
 }
